@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 00:51:54 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 13:30:35 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdio.h>
 
 #define MANY_BYTES 4096 * 1000
-
+#define MAX(X,Y) (X > Y ? X : Y)
 char	*read_stdin()
 {
 	char	*out;
@@ -40,6 +40,40 @@ int is_rush03_valid(char *stdin){stdin = 0; return 0;}
 int is_rush04_valid(char *stdin){stdin = 0; return 1;}
 int is_square_valid(char *stdin){stdin = 0; return 1;}
 
+int		get_x_dimension(char *str)
+{
+	int x_max;
+	int	x;
+
+	x_max = 0;
+	while (*str)
+	{
+		if (*str == '\n')
+		{
+			x_max = MAX(x - 1, x_max);
+			x = 0;
+		}
+		str++;
+		x++;
+	}
+	return (x_max);
+}
+
+int		get_y_dimension(char *str)
+{
+	int		y;
+
+	y = 0;
+	while (*str)
+	{
+		if (*str == '\n')
+			y++;
+		str++;
+	}
+	return (y);
+}
+
+
 int		main()
 {	
 	char	*str;
@@ -50,9 +84,9 @@ int		main()
 		;
 	else
 		return (0);
+	
 	i = 0;
 	has_already_printed_something = 0;
-	
 	while (i < (int)(sizeof(g_matches) / sizeof(g_matches[0])))
 	{
 		if (g_matches[i].is_valid(str))
@@ -61,8 +95,15 @@ int		main()
 				ft_putstr(" || ");
 			else
 				has_already_printed_something = 1;
+			ft_putchar('[');
 			ft_putstr(g_matches[i].name);
+			ft_putstr("] [");
+			ft_putstr(ft_itoa(get_x_dimension(str)));
+			ft_putstr("] [");
+			ft_putstr(ft_itoa(get_y_dimension(str)));
+			ft_putchar(']');
 		}
 		i++;
 	}
+	ft_putchar('\n');
 }

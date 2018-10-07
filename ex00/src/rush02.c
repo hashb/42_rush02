@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpapagna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 03:43:02 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/09/23 03:56:55 by rpapagna         ###   ########.fr       */
+/*   Updated: 2018/10/06 17:27:48 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include "libft.h"
 
 void	topline(int countx, int x)
 {
@@ -60,4 +60,18 @@ void	rush(int x, int y)
 		ft_putchar('\n');
 		county++;
 	}
+}
+
+
+int		main(int ac, char **av)
+{
+	int	x;
+	int y;
+
+	if (ac != 3)
+		return (0);
+	x = ft_atoi(av[1]);
+	y = ft_atoi(av[2]);
+	rush(x, y);
+	return(0);
 }

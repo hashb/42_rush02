@@ -14,7 +14,6 @@ for test_file in TEST_FILES:
 		p = Popen([COLLE_CMD], stdout=PIPE, stdin=PIPE, stderr=PIPE)
 		stdout_data = p.communicate(input=test.read())[0]
 
-	print(test_file)
+	print(f">>> testing with file: {test_file}")
 	print(stdout_data.decode('ascii'))
-
 

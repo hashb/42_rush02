@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 20:09:08 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/06 23:40:43 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/06 23:58:54 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,3 @@ t_potential_match g_matches[] = {
 	{ .is_valid = &is_rush04_valid, .name = "rush 04"}, // not valid
 	{ .is_valid = &is_square_valid, .name = "square"}, // valid
 };
-
-int main()
-{
-	int i; 
-	int has_already_printed_something;
-
-	i = 0;
-	has_already_printed_something = 0;
-	while (i < NUMBER_OF_THINGS_WE_CAN_MATCH)
-	{
-		if (g_matches[i].is_valid(stdin))
-		{
-			if (has_already_printed_something)
-				ft_putstr(" || ");
-			else
-				has_already_printed_something = 1;
-			ft_putstr(g_matches[i].name);
-		}
-		i++;
-	}
-}
-
-
-

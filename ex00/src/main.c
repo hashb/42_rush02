@@ -6,26 +6,25 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/06 22:14:08 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 00:00:33 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
+#include "rush0.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-
-#define TOO_MANY_BYTES 4096 * 1000
+#define MANY_BYTES 4096 * 1000
 
 char	*read_stdin()
 {
 	char	*out;
 	int		size;
 
-	out = (malloc(sizeof(char) * TOO_MANY_BYTES));
-	size = read(STDIN_FILENO, out, TOO_MANY_BYTES);
-	printf("%s\n\n", out);
+	out = (malloc(sizeof(char) * MANY_BYTES));
+	size = read(STDIN_FILENO, out, MANY_BYTES);
 	if (size < 0)
 	{
 		ft_putstr("Error reading stdin");
@@ -34,35 +33,29 @@ char	*read_stdin()
 	return out;
 }
 
-void	print(char **array)
-{
-	int		r;
-	int		c;
-
-	r = 0;
-	while (array[r])
-	{
-		c = 0;
-		while (array[r][c])
-		{
-			ft_putchar(array[r][c]);
-			c++;
-		}
-		ft_putchar('\n');
-		r++;
-	}
-}
-
-
 int		main()
 {	
 	char	*str;
-	char	**array;
+	int		i;
+	int		has_already_printed_something;
 	
 	if ((str = read_stdin()))
+		;
+	else
+		return (0);
+	i = 0;
+	has_already_printed_something = 0;
+	
+	while (i < NUMBER_OF_THINGS_WE_CAN_MATCH)
 	{
-		array = ft_split_by_delimiter(str, '\n');
-		print(array);
+		if (g_matches[i].is_valid(stdin))
+		{
+			if (has_already_printed_something)
+				ft_putstr(" || ");
+			else
+				has_already_printed_something = 1;
+			ft_putstr(g_matches[i].name);
+		}
+		i++;
 	}
-	return (0);	
 }

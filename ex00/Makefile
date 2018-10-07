@@ -6,7 +6,7 @@
 #    By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 10:18:11 by nkirkby           #+#    #+#              #
-#    Updated: 2018/10/06 22:12:34 by nkirkby          ###   ########.fr        #
+#    Updated: 2018/10/06 23:55:35 by nkirkby          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SOURCES = $(addprefix $(SRC_DIR)/, $(SOURCE_FILES))
 
 
 CCFLAGS = -Wall -Werror -Wextra
+
+debug: CCFLAGS += -g
+debug: $(NAME)
 
 all: $(NAME)
 

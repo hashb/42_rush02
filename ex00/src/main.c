@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 13:30:35 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 13:32:51 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 #define MANY_BYTES 4096 * 1000
 #define MAX(X,Y) (X > Y ? X : Y)
+
 char	*read_stdin()
 {
 	char	*out;
@@ -33,12 +34,12 @@ char	*read_stdin()
 	return out;
 }
 
-int is_rush00_valid(char *stdin){stdin = 0; return 1;}
-int is_rush01_valid(char *stdin){stdin = 0; return 0;}
-int is_rush02_valid(char *stdin){stdin = 0; return 0;}
-int is_rush03_valid(char *stdin){stdin = 0; return 0;}
-int is_rush04_valid(char *stdin){stdin = 0; return 1;}
-int is_square_valid(char *stdin){stdin = 0; return 1;}
+int		is_rush00_valid(char *stdin){stdin = 0; return 1;}
+int		is_rush01_valid(char *stdin){stdin = 0; return 0;}
+int		is_rush02_valid(char *stdin){stdin = 0; return 0;}
+int		is_rush03_valid(char *stdin){stdin = 0; return 0;}
+int		is_rush04_valid(char *stdin){stdin = 0; return 1;}
+int		is_square_valid(char *stdin){stdin = 0; return 1;}
 
 int		get_x_dimension(char *str)
 {

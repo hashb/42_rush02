@@ -3,6 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 03:43:02 by rpapagna          #+#    #+#             */
@@ -60,3 +61,14 @@ int		main(int ac, char **av)
 	rush(x, y);
 	return(0);
 }
+=======
+/*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/06 17:17:51 by kchenna           #+#    #+#             */
+/*   Updated: 2018/10/06 17:18:01 by kchenna          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "rush02.h"
+
+>>>>>>> bf42d74... inital files added to master

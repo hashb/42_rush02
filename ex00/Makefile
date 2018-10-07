@@ -3,6 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
+<<<<<<< HEAD
 #    By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 10:18:11 by nkirkby           #+#    #+#              #
@@ -36,3 +37,12 @@ fclean:
 
 re: fclean all
 
+=======
+#    By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/10/06 17:11:54 by kchenna           #+#    #+#              #
+#    Updated: 2018/10/06 17:23:03 by kchenna          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+>>>>>>> bf42d74... inital files added to master

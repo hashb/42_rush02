@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 14:01:38 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 15:48:14 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,53 @@ int		is_rectangular(char *str, int width, int height)
 	int len;
 
 	len = -1;
-	while (*str++)
+	int idx =0;
+	while (*str)
 	{
+		// printf("idx: %d\t%c\n", idx, *str);		
 		if (*str != '\n')
+		{
 			len++;
+		}
+		idx++;
+		str++;
+			
 	}
 	if (len == width * height)
 		return (1);
 	else
 		return (0);
+}
+
+/*
+**	iterates over str,
+**	takes a function of (width, height, x, y)
+*/
+
+// char (* get_reference_char)(int, int, int, int)
+
+int is_valid(char *str, int width, int height, t_potential_match *m)
+{
+	int	i;
+	int	x;
+	int y;
+
+	i = 0;
+	y = 1;
+	while (str[i] && y <= height)
+	{
+		x = ((i - y + 1) % width) + 1;
+		if (str[i] != '\n')
+		{
+			printf("*str: %c, ref_char: %c\t i: %d\t w: %d, \th: %d, \tx: %d,\t y: %d\n", str[i], m->reference_char(width, height, x, y), i, width, height, x, y);
+			if (m->reference_char(width, height, x, y) != str[i])
+				return (0);
+		}
+		else
+			y++;
+		i++;
+	}
+	return (1);
 }
 
 
@@ -101,12 +139,10 @@ int		main()
 	i = 0;
 	width = get_x_dimension(str);
 	height = get_y_dimension(str);
-	if (!is_rectangular(str, width, height))
-		return (0);
 	has_already_printed_something = 0;
 	while (i < (int)(sizeof(g_matches) / sizeof(g_matches[0])))
 	{
-		if (g_matches[i].is_valid(str, width, height))
+		if (is_valid(str, width, height, &g_matches[i]))
 		{
 			if (has_already_printed_something)
 				ft_putstr(" || ");

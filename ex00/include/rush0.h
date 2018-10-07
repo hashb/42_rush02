@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 20:09:08 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/07 13:45:43 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 15:22:23 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 
 typedef struct		s_potential_match
 {
-	int				(* is_valid)(char *, int, int);
+	char			(* reference_char)(int, int, int, int);
 	char			name[MAX_NAME_SIZE_BYTES];
 }					t_potential_match;
 
-int					rush00(char *arr, int w, int h);
-int					rush01(char *arr, int w, int h);
-int					rush02(char *arr, int w, int h);
-int					rush03(char *arr, int w, int h);
-int					rush04(char *arr, int w, int h);
+// char				rush00(int width, int height, int x, int y);
+// int					rush01(char *arr, int w, int h);
+// int					rush02(char *arr, int w, int h);
+// int					rush03(char *arr, int w, int h);
+char				rush04(int width, int height, int x, int y);
 
 t_potential_match	g_matches[] = {
-	{ .is_valid = &rush00, .name = "rush-00"},
-	{ .is_valid = &rush01, .name = "rush-01"},
-	{ .is_valid = &rush02, .name = "rush-02"},
-	{ .is_valid = &rush03, .name = "rush-03"},
-	{ .is_valid = &rush04, .name = "rush-04"},
+	// { .reference_char = &rush00, .name = "rush-00"},
+	// { .reference_char = &rush01, .name = "rush-01"},
+	// { .reference_char = &rush02, .name = "rush-02"},
+	// { .reference_char = &rush03, .name = "rush-03"},
+	{ .reference_char = &rush04, .name = "rush-04"},
 };
 
 #endif

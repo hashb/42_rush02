@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpapagna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:48:04 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/09/22 13:54:03 by rpapagna         ###   ########.fr       */
+/*   Updated: 2018/10/06 20:08:33 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include "libft.h"
 
 void	outside(int ctrh, int x)
 {

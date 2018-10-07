@@ -6,62 +6,47 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 03:43:02 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/06 17:27:48 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/06 20:50:52 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "rush0.h"
 
-void	topline(int countx, int x)
+char	topline(int width, int x)
 {
-	if (countx == 1 || countx == x)
-		ft_putchar('A');
-	if (countx > 1 && countx < x)
-		ft_putchar('B');
+	if (width == 1 || width == x)
+		return ('A');
+	if (width > 1 && width < x)
+		return ('B');
+	return (' ');
 }
 
-void	midline(int countx, int x)
+char	midline(int width, int x)
 {
-	if (countx == 1 || countx == x)
-		ft_putchar('B');
-	if (countx > 1 && countx < x)
-		ft_putchar(' ');
+	if (width == 1 || width == x)
+		return ('B');
+	if (width > 1 && width < x)
+		return (' ');
+	return (' ');
 }
 
-void	botline(int countx, int x)
+char	botline(int width, int x)
 {
-	if (countx == 1 || countx ==x)
-		ft_putchar('C');
-	if (countx > 1 && countx < x)
-		ft_putchar('B');
+	if (width == 1 || width ==x)
+		return('C');
+	if (width > 1 && width < x)
+		return('B');
 }
 
-void	rush(int x, int y)
+char	rush02(int width, int height, int x, int y)
 {
-	int countx;
-	int county;
-
-	county = 1;
-	while (county <= y)
-	{
-		countx = 1;
-		while (countx <= x)
-		{
-			if (county == 1)
-				topline(countx, x);
-			if (county > 1 && county < y)
-				midline(countx, x);
-			if (county > 1 && county == y)
-				botline(countx, x);
-			countx++;
-		}
-		if (x <=0)
-			break;
-		ft_putchar('\n');
-		county++;
-	}
+	if (y == 1)
+		return topline(x, width);
+	if (y > 1 && y < height)
+		return midline(x, width);
+	if (y > 1 && y == height)
+		return botline(x, width);
 }
-
 
 int		main(int ac, char **av)
 {

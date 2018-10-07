@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 23:56:36 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/06 21:47:25 by nkirkby          ###   ########.fr       */
+/*   Created: 2018/09/24 13:13:00 by nkirkby           #+#    #+#             */
+/*   Updated: 2018/10/06 20:56:29 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../include/libft.h"
 
-int		ft_atoi(char *str);
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
-char	**ft_split_by_delimiter(char *str, char delimiter);
+void	ft_putstr(char *str)
+{
+	int i;
 
-#endif
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}

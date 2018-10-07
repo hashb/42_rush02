@@ -41,8 +41,31 @@ re: fclean all
 #    By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/06 17:11:54 by kchenna           #+#    #+#              #
-#    Updated: 2018/10/06 17:23:03 by kchenna          ###   ########.fr        #
+#    Updated: 2018/10/06 17:38:56 by kchenna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+<<<<<<< HEAD
 >>>>>>> bf42d74... inital files added to master
+=======
+NAME = rush-02
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRC = ./src/ft_utils.c \
+		./src/rush02.c
+INCL = ./include
+
+all: $(NAME)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRC) -I $(INCLUDES)
+
+$(NAME): $(DEPS)
+	$(CC) $(CFLAGS) -c $(SRC) -I $(INCLUDES)
+
+clean:
+	/bin/rm $(DEPS)
+
+fclean: clean
+	/bin/rm $(NAME)
+
+re: fclean all
+>>>>>>> 0b2dcbb... all rushes added

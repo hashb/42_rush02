@@ -4,10 +4,10 @@ from subprocess import Popen, PIPE, STDOUT
 import os
 
 COLLE_CMD = '../ex00/colle-2'
-
 HERE = os.path.dirname(__file__)
-
 TEST_FILES = [f for f in os.listdir(HERE) if '.txt' in f]
+
+TEST_FILES.sort()
 
 for test_file in TEST_FILES:
 	with open(os.path.join(HERE, test_file), 'rb') as test:
@@ -16,3 +16,5 @@ for test_file in TEST_FILES:
 
 	print(test_file)
 	print(stdout_data.decode('ascii'))
+
+

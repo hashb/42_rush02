@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 20:09:08 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/07 13:35:12 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 13:45:43 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,22 @@
 
 typedef struct		s_potential_match
 {
-	int				(* is_valid)(char *);
+	int				(* is_valid)(char *, int, int);
 	char			name[MAX_NAME_SIZE_BYTES];
 }					t_potential_match;
 
-int					is_rush00_valid(char *stdin);
-int					is_rush01_valid(char *stdin);
-int					is_rush02_valid(char *stdin);
-int					is_rush03_valid(char *stdin);
-int					is_rush04_valid(char *stdin);
-int					is_square_valid(char *stdin);
+int					rush00(char *arr, int w, int h);
+int					rush01(char *arr, int w, int h);
+int					rush02(char *arr, int w, int h);
+int					rush03(char *arr, int w, int h);
+int					rush04(char *arr, int w, int h);
 
 t_potential_match	g_matches[] = {
-	{ .is_valid = &is_rush00_valid, .name = "rush-00"},
-	{ .is_valid = &is_rush01_valid, .name = "rush-01"},
-	{ .is_valid = &is_rush02_valid, .name = "rush-02"},
-	{ .is_valid = &is_rush03_valid, .name = "rush-03"},
-	{ .is_valid = &is_rush04_valid, .name = "rush-04"},
-	{ .is_valid = &is_square_valid, .name = "square"},
+	{ .is_valid = &rush00, .name = "rush-00"},
+	{ .is_valid = &rush01, .name = "rush-01"},
+	{ .is_valid = &rush02, .name = "rush-02"},
+	{ .is_valid = &rush03, .name = "rush-03"},
+	{ .is_valid = &rush04, .name = "rush-04"},
 };
 
 #endif

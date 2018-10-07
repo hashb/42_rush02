@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   r00.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 11:17:40 by eubotnar          #+#    #+#             */
-/*   Updated: 2018/10/07 13:27:05 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/10/07 13:52:43 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		down(char *arr, int i, int w, int h)
+#include <stdio.h>
+
+int		down0(char *arr, int i, int w, int h)
 {
 	if (i > w && i <= w * (h - 1))
 	{
@@ -25,7 +27,7 @@ int		down(char *arr, int i, int w, int h)
 	return (1);
 }
 
-int		side(char *arr, int i, int w, int h)
+int		side0(char *arr, int i, int w, int h)
 {
 	if (i > 1 && i < w)
 	{
@@ -45,21 +47,22 @@ int		side(char *arr, int i, int w, int h)
 	return (1);
 }
 
-int		rush(char *arr, int w, int h)
+int		rush00(char *arr, int w, int h)
 {
 	int i;
 
 	i = 1;
 	while (i <= w * h && (w > 0 || h > 0))
 	{
+		printf("%d, %d, %d\n", i, w, h);
 		if (i % w == 0 || i % w == 1 || i == 1)
 		{
-			if (!down(arr, i, w, h))
+			if (!down0(arr, i, w, h))
 				return (0);
 		}
 		else
 		{
-			if (!side(arr, i, w, h))
+			if (!side0(arr, i, w, h))
 				return (0);
 		}
 		if (i % w == 0)

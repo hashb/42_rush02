@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   r02.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 11:17:40 by eubotnar          #+#    #+#             */
-/*   Updated: 2018/10/07 13:33:03 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/10/07 13:48:51 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		down(char *arr, int i, int w, int h)
+int		down2(char *arr, int i, int w, int h)
 {
 	if (i > w && i <= w * (h - 1))
 	{
@@ -27,9 +27,10 @@ int		down(char *arr, int i, int w, int h)
 		if (arr[i - 1] != 'C')
 			return (0);
 	}
+	return (1);
 }
 
-int		side(char *arr, int i, int w, int h)
+int		side2(char *arr, int i, int w, int h)
 {
 	if (i > 1 && i < w)
 	{
@@ -49,7 +50,7 @@ int		side(char *arr, int i, int w, int h)
 	return (1);
 }
 
-int		rush(char *arr, int w, int h)
+int		rush02(char *arr, int w, int h)
 {
 	int i;
 
@@ -58,12 +59,12 @@ int		rush(char *arr, int w, int h)
 	{
 		if (i % w == 0 || i % w == 1 || i == 1)
 		{
-			if (!down(arr, i, w, h))
+			if (!down2(arr, i, w, h))
 				return (0);
 		}
 		else
 		{
-			if (!side(arr, i, w, h))
+			if (!side2(arr, i, w, h))
 				return (0);
 		}
 		if (i % w == 0)

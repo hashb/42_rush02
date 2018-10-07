@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 00:00:33 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 00:06:27 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		main()
 	
 	while (i < NUMBER_OF_THINGS_WE_CAN_MATCH)
 	{
-		if (g_matches[i].is_valid(stdin))
+		if (g_matches[i].is_valid(str))
 		{
 			if (has_already_printed_something)
 				ft_putstr(" || ");

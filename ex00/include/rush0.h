@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 20:09:08 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/06 23:58:54 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 00:06:11 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #ifndef RUSH0_H
 # define RUSH0_H
 
+# define MAX_NAME_SIZE_BYTES 20
 
 typedef struct	s_potential_match
 {
 	int 		(* is_valid)(char *);
-	char 		**name;
+	char 		name[MAX_NAME_SIZE_BYTES];
 }				t_potential_match;
 
 int is_rush00_valid(char *stdin);
@@ -39,3 +40,5 @@ t_potential_match g_matches[] = {
 	{ .is_valid = &is_rush04_valid, .name = "rush 04"}, // not valid
 	{ .is_valid = &is_square_valid, .name = "square"}, // valid
 };
+
+#endif

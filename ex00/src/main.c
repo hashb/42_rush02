@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 00:06:27 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 00:51:54 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ char	*read_stdin()
 	return out;
 }
 
+int is_rush00_valid(char *stdin){stdin = 0; return 1;}
+int is_rush01_valid(char *stdin){stdin = 0; return 0;}
+int is_rush02_valid(char *stdin){stdin = 0; return 0;}
+int is_rush03_valid(char *stdin){stdin = 0; return 0;}
+int is_rush04_valid(char *stdin){stdin = 0; return 1;}
+int is_square_valid(char *stdin){stdin = 0; return 1;}
+
 int		main()
 {	
 	char	*str;
@@ -46,7 +53,7 @@ int		main()
 	i = 0;
 	has_already_printed_something = 0;
 	
-	while (i < NUMBER_OF_THINGS_WE_CAN_MATCH)
+	while (i < (int)(sizeof(g_matches) / sizeof(g_matches[0])))
 	{
 		if (g_matches[i].is_valid(str))
 		{

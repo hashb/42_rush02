@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 11:17:40 by eubotnar          #+#    #+#             */
-/*   Updated: 2018/10/07 00:03:46 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/10/07 18:53:17 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ void	down(int i, int w, int h)
 {
 	if (i > w && i <= w * (h - 1))
 		ft_putchar('B');
-	else if (i == 1 || i == w*h)
+	else if (i == 1)
+		ft_putchar('A');
+	else if (i == w*h && i <= w)
+		ft_putchar('C');
+	else if (i/w == h)
 		ft_putchar('A');
 	else
 		ft_putchar('C');

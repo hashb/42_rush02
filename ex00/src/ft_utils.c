@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 17:23:07 by kchenna           #+#    #+#             */
-/*   Updated: 2018/10/07 17:35:56 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 18:52:05 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,15 @@ int		ft_strlen(char *str)
 		str++;
 	}
 	return (len);
+}
+
+void	ft_put_name_width_height(char *name, int width, int height)
+{
+	ft_putchar('[');
+	ft_putstr(name);
+	ft_putstr("] [");
+	ft_putstr(ft_itoa(width));
+	ft_putstr("] [");
+	ft_putstr(ft_itoa(height));
+	ft_putchar(']');
 }

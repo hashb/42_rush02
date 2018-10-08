@@ -12,7 +12,7 @@ TEST_FILES = [f for f in os.listdir(HERE) if 'rush03' in f]
 
 TEST_FILES.sort()
 
-subprocess.check_call(['./build_resources.sh'])
+subprocess.check_call(['./build_alt_resources.sh'])
 
 def test_agains_files():
 	for test_file in TEST_FILES:
@@ -35,22 +35,20 @@ def sweep_parameter_space():
 				rush0 = Popen([bin_name, str(width), str(height)], stdout=PIPE)
 				colle2 = Popen([COLLE_CMD], stdin=rush0.stdout, stdout=subprocess.PIPE)	
 				stdout_data = colle2.communicate()[0]
-
+				rush0.stdout.flush()
 				the_output = stdout_data.decode('ascii')
 				what_we_should_see = f"[rush-0{bin_name[-1]}] [{width}] [{height}]"
 
 				if (width == 0 or height == 0):
 					assert "Error" in the_output
 				elif what_we_should_see not in the_output:
+					print("\/\/\/\/\/\/\/\/")
 					print("FAIL")
 					print(the_output)
 					print(f"height {height}\t width {width}\t bin name: {bin_name}")
+					print('^^^^^^')
 				# print(the_output)
-				
-
-			
-
-
 
 if __name__ == '__main__':
-	sweep_parameter_space()
+	test_agains_files()
+	# sweep_parameter_space()

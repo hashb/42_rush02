@@ -6,11 +6,11 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 11:31:08 by nkirkby           #+#    #+#             */
-/*   Updated: 2018/10/07 13:29:48 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 19:14:44 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_utils.h"
 #include <stdlib.h>
 
 char	*ft_strdup(char *src)

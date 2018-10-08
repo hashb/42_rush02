@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 17:07:50 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 17:16:36 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,13 +106,13 @@ int is_valid(char *str, int width, int height, t_potential_match *m)
 
 	i = 0;
 	y = 1;
-	printf("tryna match %s\n", m->name);
+	// printf("tryna match %s\n", m->name);
 	while (str[i] && y <= height)
 	{
 		x = ((i - y + 1) % width) + 1;
 		if (str[i] != '\n')
 		{
-			printf("*str: %c, ref_char: %c\t i: %d\t w: %d, \th: %d, \tx: %d,\t y: %d\n", str[i], m->reference_char(width, height, x, y), i, width, height, x, y);
+			// printf("*str: %c, ref_char: %c\t i: %d\t w: %d, \th: %d, \tx: %d,\t y: %d\n", str[i], m->reference_char(width, height, x, y), i, width, height, x, y);
 			if (m->reference_char(width, height, x, y) != str[i])
 				return (0);
 		}
@@ -120,7 +120,7 @@ int is_valid(char *str, int width, int height, t_potential_match *m)
 			y++;
 		i++;
 	}
-	printf("OK!!\n");
+	// printf("OK!!\n");
 	return (1);
 }
 

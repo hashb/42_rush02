@@ -5,9 +5,9 @@ import os
 
 COLLE_CMD = '../ex00/colle-2'
 HERE = os.path.dirname(__file__)
-# TEST_FILES = [f for f in os.listdir(HERE) if '.txt' in f and '3' in f]
+TEST_FILES = [f for f in os.listdir(HERE) if '.txt' in f and '01' in f]
 
-TEST_FILES = [f for f in os.listdir(HERE) if 'rush03_1_5.txt' in f]
+# TEST_FILES = [f for f in os.listdir(HERE) if 'rush03_1_5.txt' in f]
 
 
 

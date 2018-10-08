@@ -6,7 +6,7 @@
 #    By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 10:18:11 by nkirkby           #+#    #+#              #
-#    Updated: 2018/10/07 16:49:11 by nkirkby          ###   ########.fr        #
+#    Updated: 2018/10/07 17:12:56 by nkirkby          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = colle-2
 SRC_DIR = src
 INC_DIR = include
 SOURCE_FILES = ft_atoi.c ft_putchar.c ft_split_by_delimiter.c main.c \
-ft_putstr.c ft_itoa.c r00.c r03.c r04.c #r01.c r02.c  r04.c
+ft_putstr.c ft_itoa.c r00.c r01.c r02.c r03.c r04.c
 SOURCES = $(addprefix $(SRC_DIR)/, $(SOURCE_FILES))
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 17:23:07 by kchenna           #+#    #+#             */
-/*   Updated: 2018/10/06 17:42:50 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/10/07 17:35:56 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putchar(char c)
 void	ft_putstr(char *str)
 {
 	while (*str)
-		ft_putstr(str++);
+		ft_putchar(*str++);
 }
 
 int		ft_strlen(char *str)

@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 19:55:13 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 20:00:50 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <stdlib.h>
 #include "rush0.h"
 #include "ft_utils.h"
-#include <stdio.h> // REMOVE ME PLZ
-
 
 #define MANY_BYTES 4096 * 1000
 #define MAX(X,Y) (X > Y ? X : Y)
@@ -80,7 +78,6 @@ int		is_valid(char *str, int width, int height, t_potential_match *m)
 		x = ((i - y + 1) % width) + 1;
 		if (str[i] != '\n')
 		{
-			// printf("*str: %c, ref_char: %c\t i: %d\t w: %d, \th: %d, \tx: %d,\t y: %d\n", str[i], m->reference_char(width, height, x, y), i, width, height, x, y);
 			if (m->reference_char(width, height, x, y) != str[i])
 				return (0);
 		}

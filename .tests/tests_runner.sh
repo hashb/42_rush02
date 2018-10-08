@@ -3,19 +3,16 @@
 #                                                         :::      ::::::::    #
 #    tests_runner.sh                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+         #
+#    By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/07 16:31:46 by kchenna           #+#    #+#              #
-#    Updated: 2018/10/07 17:42:42 by kchenna          ###   ########.fr        #
+#    Updated: 2018/10/07 18:02:16 by nkirkby          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # set -e
 
-for i in {0..4}; do gcc -o z_rush0$i ./rush00_sources/rush0$i.c ../ex00/src/ft_utils.c  -I ../ex00/include; done
-
-make -C ../ex00/ fclean
-make -C ../ex00/ debug
+./build_resources.sh
 
 for r in {0..4}
 do
@@ -23,10 +20,15 @@ do
 	do
 		for j in {1..5}
 		do
-			echo "********************"
-			echo ""
-			echo "rush 0$r and i: $i  j: $j"
-			./z_rush0$r $i $j | ../ex00/colle-2 | grep -F "[rush-0$r] [$i] [$j]"
+
+			which="rush 0$r and height: $i  width: $j"
+			a=`./z_rush0$r $i $j | ../ex00/colle-2 | grep -F "[rush-0$r] [$i] [$j]"`
+			if [[ $a == *"["* ]]; then
+				echo "$which OK!"
+			else
+				echo "$which NOPE!"
+				# echo $a
+			fi
 		done
 	done
 done

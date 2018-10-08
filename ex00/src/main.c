@@ -6,7 +6,7 @@
 /*   By: nkirkby <nkirkby@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 08:42:09 by rpapagna          #+#    #+#             */
-/*   Updated: 2018/10/07 17:43:57 by nkirkby          ###   ########.fr       */
+/*   Updated: 2018/10/07 18:24:02 by nkirkby          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*read_stdin()
 
 	out = (malloc(sizeof(char) * MANY_BYTES));
 	size = read(STDIN_FILENO, out, MANY_BYTES);
-	if (size < 0)
+	if (size <= 0)
 	{
 		ft_putstr("Error reading stdin");
 		return (0);
